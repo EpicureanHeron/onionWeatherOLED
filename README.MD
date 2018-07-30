@@ -68,9 +68,9 @@ Run
 ```
 crontab -e
 ```
-Update that file with (this will run the script every 5 minutes)
+Update that file with (this will run the script every 15 minutes)
 ```
-*/5 * * * * /usr/bin/node /mnt/sda/weatheroled/index.js
+*/15 * * * * /usr/bin/node /mnt/sda/weatheroled/index.js
 ```
 exit crontab using vi
 ```
