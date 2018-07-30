@@ -1,0 +1,4 @@
+## CRON JOB SET UP 
+
+
+*/5 * * * * /usr/bin/node /mnt/sda/weatheroled/index.js
