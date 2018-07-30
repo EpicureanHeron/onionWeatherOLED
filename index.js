@@ -25,9 +25,12 @@ https.get(queryURL, (resp) => {
     //var date = new Date(parsedBody.dt*1000);
     var sunrise = new Date(parsedBody.sys.sunrise*1000)
     var sunset = new Date(parsedBody.sys.sunset*1000)
+
     var sunriseString = sunrise.toString()
     var sunsetString = sunset.toString()
 
+    var sunriseDisplay = sunriseString.substring(16,21)
+    var sunsetDisplay = sunsetString.substring(16,21)
 
     oledExp.setCursor(0, 0)
     oledExp.write("Current weather:")
@@ -36,9 +39,9 @@ https.get(queryURL, (resp) => {
     oledExp.setCursor(2, 0)
     oledExp.write("Current temp: " + parsedBody.main.temp)
     oledExp.setCursor(3, 0)
-    oledExp.write("Sunrise: " + sunriseString)
-    oledExp.setCursor(5, 0)
-    oledExp.write("Sunset: " + sunsetString)
+    oledExp.write("Sunrise: " + sunriseDisplay)
+    oledExp.setCursor(4, 0)
+    oledExp.write("Sunset: " + sunsetDisplay)
 });
  
 }).on("error", (err) => {
